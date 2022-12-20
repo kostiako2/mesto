@@ -1,0 +1,9 @@
+.group__text {
+    margin: 25px 15px 0 21px;
+    padding-bottom: 31px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 246px;
+    
+    
+}

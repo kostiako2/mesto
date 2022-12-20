@@ -1,0 +1,22 @@
+.profile__add-button-border {
+    margin-top: 36px ;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    display: flex;
+    box-sizing: border-box;
+    max-width: 282px;
+    background-color: #000000;
+    cursor: url('/images/Layer.png'), auto;
+}
+
+.profile__add-button-border:hover {
+    opacity: 0.6;
+  }
+
+@media (min-width:1280px) {
+    .profile__add-button-border {
+        margin: 35px 0 35px 244px;
+        min-width: 150px;
+    }
+}

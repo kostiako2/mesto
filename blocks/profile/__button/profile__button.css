@@ -1,0 +1,13 @@
+.profile__button {
+    width: 7.5px;
+    height: 7.5px;
+    margin: auto;
+}
+
+
+@media (min-width:1280px) {
+    .profile__button {
+        width: 10px;
+        height: 10px;
+    }
+}

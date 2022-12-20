@@ -1,0 +1,10 @@
+.group__like {
+    width: 22px;
+    height: 19px;
+    align-self: flex-end;
+    cursor: url('/images/Layer.png'), auto;
+}
+
+.group__like:hover {
+    opacity: 0.5;
+  }

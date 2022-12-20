@@ -1,0 +1,9 @@
+.group__card {
+    width: 282px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
