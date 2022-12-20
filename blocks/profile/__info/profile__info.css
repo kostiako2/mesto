@@ -4,7 +4,7 @@
     grid-template-columns: 189px 18px;
     grid-template-rows: repeat(2, auto);
     column-gap: 10px;
-    row-gap: 14px ;
+    row-gap: 14px;
     grid-template-areas:
     "title button"
     "subtitle .";
@@ -12,11 +12,11 @@
 
 @media (min-width:1280px) {
     .profile__info {
-        margin: 22px 0 25px 30px ;
+        margin: 22px 0 25px 30px;
         grid-template-columns: 294px auto;
         grid-template-rows: repeat(2, auto);
         column-gap: 18px;
-        row-gap: 16px ;
+        row-gap: 16px;
         
     }
 }
