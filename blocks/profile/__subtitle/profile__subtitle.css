@@ -7,7 +7,9 @@
     max-height: 14px;
     text-align: center;
     grid-area: subtitle;
-    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
