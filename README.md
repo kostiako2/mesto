@@ -10,7 +10,7 @@
 
 **Github Pages**
 
-* [Ссылка на Github Pages](https://kostiako2.github.io/russian-travel/index.html)
+* [Ссылка на Github Pages](https://kostiako2.github.io/mesto/)
 
 **Figma**
 
