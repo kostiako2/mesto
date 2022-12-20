@@ -7,7 +7,7 @@
     box-sizing: border-box;
     max-width: 282px;
     background-color: #000000;
-    cursor: url('/images/Layer.png'), auto;
+    cursor: url('../../../images/Layer.png'), auto;
 }
 
 .profile__add-button-border:hover {

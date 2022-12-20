@@ -8,7 +8,7 @@
     grid-area: button;
     padding: 0;
     background-color: #000000;
-    cursor: url('/images/Layer.png'), auto;
+    cursor: url('../../../images/Layer.png'), auto;
 }
 
 .profile__button-border:hover {

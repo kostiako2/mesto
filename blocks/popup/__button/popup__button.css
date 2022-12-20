@@ -6,7 +6,7 @@
     box-sizing: border-box;
     width: 238px;
     background: #000000;
-    cursor: url('/images/Layer.png'), auto;
+    cursor: url('../../../images/Layer.png'), auto;
 }
 
 .popup__button:hover {
