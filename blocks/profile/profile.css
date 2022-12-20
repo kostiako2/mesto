@@ -6,7 +6,8 @@
 
 @media (min-width:1280px) {
     .profile {
-        margin: 40px 200px 0;
+        margin: 40px auto 0;
         flex-direction: row;
+        max-width: 880px;
     }
 }

@@ -8,7 +8,8 @@
 
 @media (min-width:1280px) {
     .group {
-        margin: 51px 200px 0;
+        margin: 51px auto 0;
         gap: 17px;
+        max-width: 880px;
     }
 }
