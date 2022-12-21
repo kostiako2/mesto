@@ -14,7 +14,6 @@
     .profile__info {
         margin: 22px 0 25px 30px;
         grid-template-columns: 294px auto;
-        grid-template-rows: repeat(2, auto);
         column-gap: 18px;
         row-gap: 16px;
         

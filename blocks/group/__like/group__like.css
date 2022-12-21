@@ -3,6 +3,11 @@
     height: 19px;
     align-self: flex-end;
     cursor: url('../../../images/Layer.png'), auto;
+    padding: 0;
+    background-image: url('../../../images/like.svg');
+    border: 0;
+    background-color: #ffffff;
+    margin-right: 5px;
 }
 
 .group__like:hover {

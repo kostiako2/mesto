@@ -18,8 +18,8 @@ popupCloseButtonElement.addEventListener('click', closePopup)
 
 let formElement = popupElement.querySelector('.popup__form');
 // Находим поля формы в DOM
-let nameInput = popupElement.querySelector('.popup__field_name');
-let jobInput = popupElement.querySelector('.popup__field_job');
+let nameInput = popupElement.querySelector('.popup__input_type_name');
+let jobInput = popupElement.querySelector('.popup__input_type_job');
 let nameOutput = document.querySelector('.profile__title');
 let jobOutput = document.querySelector('.profile__subtitle');
 
@@ -34,16 +34,15 @@ function handleFormSubmit (evt) {
    
     nameOutput.textContent = nameInput.value;
     jobOutput.textContent = jobInput.value;
+    closePopup();
     // Выберите элементы, куда должны быть вставлены значения полей
 
     // Вставьте новые значения с помощью textContent
 }
 
 // Прикрепляем обработчик к форме:
-const popupSaveButtonElement = popupElement.querySelector('.popup__button');
 
-popupSaveButtonElement.addEventListener('click', handleFormSubmit)
-popupSaveButtonElement.addEventListener('click', closePopup)
+
 
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit); 
