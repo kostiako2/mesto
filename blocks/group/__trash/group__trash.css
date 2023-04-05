@@ -1,0 +1,16 @@
+.group__trash {
+    position: absolute;
+    right:20px;
+    top:20px;
+    width: 18px;
+    height: 19px;
+    cursor: url('../../../../images/Layer.png'), auto;
+    background-image: url('../../../images/Trash.svg');
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.group__trash:hover {
+    opacity: 0.5;
+  }

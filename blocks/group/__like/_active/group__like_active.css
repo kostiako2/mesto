@@ -1,0 +1,15 @@
+.group__like_active {
+    width: 22px;
+    height: 19px;
+    align-self: flex-end;
+    cursor: url('../../../../images/Layer.png'), auto;
+    padding: 0;
+    background-image: url('../../../../images/like2.svg');
+    border: 0;
+    background-color: #ffffff;
+    margin-right: 5px;
+}
+
+.group__like_active:hover {
+    opacity: 0.5;
+  }
