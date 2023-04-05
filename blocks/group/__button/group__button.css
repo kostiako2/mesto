@@ -1,0 +1,10 @@
+.group__button {
+    cursor: url('../../../../images/Layer.png'), auto;
+    padding: 0;
+    border: 0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.group__button:hover {
+    opacity: 0.5;
+  }

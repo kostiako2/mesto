@@ -1,9 +1,11 @@
 const popupOpenButtonElement = document.querySelector('.profile__button-border') ;
-const popupOpenButtonElementPicture = document.querySelector('.profile__add-button-border');
+const popupOpenButtonElementCard = document.querySelector('.profile__add-button-border');
 const popupElement = document.querySelector('.popup');
+const popupElementPicture = document.querySelector('.popup-picture')
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
 const itemTemplate = document.querySelector(".item_template").content;
 const groupCard = document.querySelector(".group");
+const popupOpenButtonElementPicture = document.querySelector('.group__button');
 let likeButton = document.querySelectorAll(".group__like");
 let deleteButton = document.querySelectorAll(".group__trash");
 let formElement = popupElement.querySelector('.popup__form');
@@ -15,7 +17,7 @@ let cardTitle = document.querySelector('.group__title');
 let photo = document.querySelectorAll(".group__photo");
 let count = 0;
 
-
+console.log(popupElementPicture);
 
 
 const initialCards = [
@@ -69,7 +71,7 @@ const openPopup = function() {
     count = 0;
 }
 
-const openPopupPicture = function() {
+const openPopupCard = function() {
     popupElement.classList.add('popup_opened');
     nameInput.value = null; 
     jobInput.value = null;
@@ -81,13 +83,19 @@ const openPopupPicture = function() {
 
 }
 
+const openPopupPicture = function() {
+  popupElementPicture.classList.add('popup-picture_opened');
+  console.log(popupElementPicture);
+}
+
 
 const closePopup = function() { 
     popupElement.classList.remove('popup_opened')
 }
-popupOpenButtonElementPicture.addEventListener('click', openPopupPicture);
+popupOpenButtonElementCard.addEventListener('click', openPopupCard);
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
+popupOpenButtonElementPicture.addEventListener('click',openPopupPicture)
 
 
 
