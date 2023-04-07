@@ -1,4 +1,5 @@
 .group__card {
+    position: relative;
     width: 282px;
     background: #FFFFFF;
     border-radius: 10px;
