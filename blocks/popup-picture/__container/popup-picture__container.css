@@ -1,9 +1,9 @@
 .popup-picture__container {
-    background: #FFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     color: #000000;
     margin: auto;
-    max-width: 75vw;
-    max-height: 75vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    
 }

@@ -3,9 +3,10 @@ const popupOpenButtonElementCard = document.querySelector('.profile__add-button-
 const popupElement = document.querySelector('.popup');
 const popupElementPicture = document.querySelector('.popup-picture')
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
+const popupCloseButtonElementPicture = popupElementPicture.querySelector(".popup-picture__close-button");
 const itemTemplate = document.querySelector(".item_template").content;
 const groupCard = document.querySelector(".group");
-const popupOpenButtonElementPicture = document.querySelector('.group__button');
+const popupOpenButtonElementPicture = document.querySelectorAll('.group__button');
 let likeButton = document.querySelectorAll(".group__like");
 let deleteButton = document.querySelectorAll(".group__trash");
 let formElement = popupElement.querySelector('.popup__form');
@@ -13,12 +14,11 @@ let nameInput = popupElement.querySelector('.popup__input_type_name');
 let jobInput = popupElement.querySelector('.popup__input_type_job');
 let nameOutput = document.querySelector('.profile__title');
 let jobOutput = document.querySelector('.profile__subtitle');
-let cardTitle = document.querySelector('.group__title');
+let cardTitle = document.querySelectorAll('.group__title');
 let photo = document.querySelectorAll(".group__photo");
 let count = 0;
-
-console.log(popupElementPicture);
-
+const popupPhoto = document.querySelector('.popup-picture__photo');
+const popupTitlePicture = document.querySelector('.popup-picture__title');
 
 const initialCards = [
     {
@@ -49,6 +49,8 @@ const initialCards = [
   
 for (let i = 0; i < initialCards.length; i++) {
     photo[i].src = initialCards[i].link;
+    cardTitle[i].textContent = initialCards[i].name;
+
 }
 
 likeButton.forEach(likeButton => likeButton.addEventListener('click', function () {
@@ -59,6 +61,16 @@ deleteButton.forEach(deleteButton => deleteButton.addEventListener('click', func
   let card = document.querySelector(".group__card");
   card.remove();
 }))
+
+popupOpenButtonElementPicture.forEach(popupOpenButtonElementPicture => popupOpenButtonElementPicture.addEventListener('click', function() {
+  popupElementPicture.classList.add('popup-picture_opened');
+  popupPhoto.src = popupOpenButtonElementPicture.querySelector('.group__photo').src;
+  console.log(popupOpenButtonElementPicture);
+  popupTitlePicture.textContent = popupOpenButtonElementPicture.querySelector('.group__photo').alt;
+  
+  
+}))
+
 
 const openPopup = function() {
     nameInput.placeholder = 'Введите имя';
@@ -83,19 +95,19 @@ const openPopupCard = function() {
 
 }
 
-const openPopupPicture = function() {
-  popupElementPicture.classList.add('popup-picture_opened');
-  console.log(popupElementPicture);
-}
-
-
 const closePopup = function() { 
     popupElement.classList.remove('popup_opened')
 }
+
+const closePopupPicture = function() { 
+  popupElementPicture.classList.remove('popup-picture_opened')
+}
+
+
 popupOpenButtonElementCard.addEventListener('click', openPopupCard);
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
-popupOpenButtonElementPicture.addEventListener('click',openPopupPicture)
+popupCloseButtonElementPicture.addEventListener('click',closePopupPicture);
 
 
 
@@ -116,20 +128,32 @@ function addCardSubmit (evt) {
     htmlElement.querySelector(".group__title").textContent = nameInput.value;
     htmlElement.querySelector(".group__photo").src = jobInput.value;
     groupCard.prepend(htmlElement);
+
     const like = document.querySelector(".group__like");
     function addLike () {
-      
       like.classList.toggle('group__like_active');
     }
     like.addEventListener('click', addLike);
+
     const deleteTrash = document.querySelector(".group__trash");
     function removeCard () {
       let card = document.querySelector(".group__card");
       card.remove();
     }
     deleteTrash.addEventListener('click', removeCard);
+  
+    const photoNew = document.querySelector('.group__photo');
+    photoNew.alt = nameInput.value;
+    console.log(photoNew);
+    function openPopupPicture () {
+      popupElementPicture.classList.add('popup-picture_opened');
+      popupPhoto.src = photoNew.src;
+      popupTitlePicture.textContent = photoNew.alt;
+    }
+    photoNew.addEventListener('click',openPopupPicture);
   }
   closePopup();
+  
 }
 
 
