@@ -65,10 +65,8 @@ deleteButton.forEach(deleteButton => deleteButton.addEventListener('click', func
 popupOpenButtonElementPicture.forEach(popupOpenButtonElementPicture => popupOpenButtonElementPicture.addEventListener('click', function() {
   popupElementPicture.classList.add('popup-picture_opened');
   popupPhoto.src = popupOpenButtonElementPicture.querySelector('.group__photo').src;
-  console.log(popupOpenButtonElementPicture);
   popupTitlePicture.textContent = popupOpenButtonElementPicture.querySelector('.group__photo').alt;
-  
-  
+
 }))
 
 
@@ -144,7 +142,6 @@ function addCardSubmit (evt) {
   
     const photoNew = document.querySelector('.group__photo');
     photoNew.alt = nameInput.value;
-    console.log(photoNew);
     function openPopupPicture () {
       popupElementPicture.classList.add('popup-picture_opened');
       popupPhoto.src = photoNew.src;
