@@ -1,5 +1,5 @@
 .group__button {
-    cursor: url('../../../../images/Layer.png'), auto;
+    cursor: url('../../../images/Layer.png'), auto;
     padding: 0;
     border: 0;
     height: 282px;
