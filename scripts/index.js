@@ -98,10 +98,10 @@ function addCard (name,link) {
     let like = htmlElement.querySelector(".group__like");
     let deleteTrash = htmlElement.querySelector(".group__trash");
     let card = htmlElement.querySelector(".group__card");
-    let popupPhoto = popupElementPicture.querySelector('.popup-picture__photo');
-    let popupTitlePicture = popupElementPicture.querySelector('.popup-picture__title');
+    let popupPhoto = popupElementPicture.querySelector('.popup__photo-picture');
+    let popupTitlePicture = popupElementPicture.querySelector('.popup__title-picture');
     let popupOpenButtonElementPicture = htmlElement.querySelector(".group__button")
-    let popupCloseButtonElementPicture = popupElementPicture.querySelector(".popup-picture__close-button");
+    let popupCloseButtonElementPicture = popupElementPicture.querySelector(".popup__close-button-picture");
 
     htmlElement.querySelector(".group__title").textContent = name;
     htmlElement.querySelector(".group__photo").src = link;
