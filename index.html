@@ -26,7 +26,7 @@
             </button>
         </section>
         <section class="group">
-            <div class="group__card">
+            <!-- <div class="group__card">
                 <button type="button" class="group__button"><img class="group__photo" src="./images/Karachaevsk.png" alt="Архыз"></button>
                 <button type ="button" class="group__trash"></button> 
                 <div class="group__text">
@@ -73,7 +73,7 @@
                     <h2 class="group__title">Карачаево-Ч...</h2>
                     <button type="button" class="group__like"></button>
                 </div>
-            </div>
+            </div> -->
         </section>
     </main>
     <footer class="footer"><p class="footer__box">© 2022 Mesto Russia</p></footer>
@@ -88,7 +88,18 @@
             </form>
         </div>
     </div>
-    <div class="popup-picture">
+    <div class="popup popup_card">
+        <div class="popup__container">
+            <button type="button" class="popup__close-button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="profile-form" method="get">
+                <input class="popup__input popup__input_type_name" placeholder="Название" type="text" name="name1" value=""> 
+                <input class="popup__input popup__input_type_job" placeholder="Ссылка на картинку" type="text" name="name2" value="">  
+                <button type="submit" class="popup__button"> Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_picture">
         <div class="popup-picture__container">
             <button type="button" class="popup-picture__close-button"></button>
             <img class="popup-picture__photo" src="./images/Karachaevsk.png" alt="12313">
