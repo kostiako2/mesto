@@ -44,7 +44,11 @@ const closePopupProfile = function() {
 const closePopupCard = function() { 
   popupElementCard.classList.remove('popup_opened');
 }
+function closePopupPicture() {
+  popupElementPicture.classList.remove('popup_opened');     
+}
 
+popupCloseButtonElementPicture.addEventListener('click', closePopupPicture);
 popupOpenButtonElement.addEventListener('click', openPopupProfile);
 popupCloseButtonElement.addEventListener('click', closePopupProfile);
 popupOpenButtonElementCard.addEventListener('click', openPopupCard);
@@ -86,13 +90,9 @@ function addCard (name,link) {
   }
   popupOpenButtonElementPicture.addEventListener('click', openPopupPicture);
 
-  function closePopupPicture() {
-    popupElementPicture.classList.remove('popup_opened');     
-  }
-
-  popupCloseButtonElementPicture.addEventListener('click', closePopupPicture);
   return htmlElement;
 }
+
 
 function renderCard(element) {
   groupCard.prepend(element);
