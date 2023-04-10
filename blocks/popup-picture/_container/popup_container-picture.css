@@ -1,0 +1,12 @@
+.popup_container-picture {
+    background: rgba(0, 0, 0, 0);
+    min-width: 0;
+    min-height: 0;
+}
+
+@media (min-width:1280px) {
+    .popup__container-picture {
+        min-width: 430px;
+        
+    }
+}
