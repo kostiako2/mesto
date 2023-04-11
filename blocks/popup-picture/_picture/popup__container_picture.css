@@ -1,5 +1,6 @@
 .popup__container_picture {
     background: rgba(0, 0, 0, 0);
-    min-width: 75vw;
+    max-width: 75vw;
+    max-height: 75vh;
 }
 

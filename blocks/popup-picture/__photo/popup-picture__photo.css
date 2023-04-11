@@ -1,5 +1,5 @@
-.popup__photo-picture {
-    max-width: 75vw;
-    
+.popup-picture__photo {
     object-fit: cover;
+    max-height: 75vh;
+    
 }
