@@ -12,7 +12,7 @@ const groupCard = document.querySelector(".group");
 
 const popupOpenButtonElementPicture = itemTemplate.querySelector(".group__button");
 
-const popupPhoto = popupElementPicture.querySelector('.popup-picture__photo');
+const popupPhoto = popupElementPicture.querySelector('.popup__photo-picture');
 const popupTitlePicture = popupElementPicture.querySelector('.popup__title-picture');
 const popupCloseButtonElementPicture = popupElementPicture.querySelector(".popup__close-button");
 
