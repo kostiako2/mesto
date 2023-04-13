@@ -1,6 +1,7 @@
 .popup__form {
     margin: 75px auto 0;
     width: 238px;
+    height: 155px;
 }
 
 
@@ -11,3 +12,4 @@
         
     }
 }
+

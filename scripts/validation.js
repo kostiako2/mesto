@@ -16,9 +16,6 @@ const validationConfig =  {
 const enableValidation = ({formSelector, ...rest }) => {
     const forms = Array.from(document.querySelectorAll(formSelector));
     forms.forEach(form =>{
-      form.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-      })
       setEventListeners(form,rest);
     })
     }
@@ -40,18 +37,27 @@ const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, .
     })
   }
   
-  const checkInputValidaty = (input,{inputErrorClass,errorClass, ...rest}) => {
-    const currentInputErrorContainer = document.querySelector(`#${input.id}-error`);
+  const checkInputValidaty = (input,rest) => {
     if (input.checkValidity()) {
-        input.classList.remove(inputErrorClass);
-        currentInputErrorContainer.textContent ='';
+        hideError(input,rest);
     }else {
-        input.classList.add(inputErrorClass);
-        currentInputErrorContainer.classList.add(errorClass);
-        currentInputErrorContainer.textContent = input.validationMessage;
+        showError(input,rest);
     }
   }
   
+ const showError = (input,{inputErrorClass,errorClass, ...rest }) => {
+  const currentInputErrorContainer = document.querySelector(`#${input.id}-error`);
+  input.classList.add(inputErrorClass);
+  currentInputErrorContainer.classList.add(errorClass);
+  currentInputErrorContainer.textContent = input.validationMessage;
+ }
+
+const hideError = (input,{inputErrorClass, ...rest}) => {
+  const currentInputErrorContainer = document.querySelector(`#${input.id}-error`);
+  input.classList.remove(inputErrorClass);
+  currentInputErrorContainer.textContent ='';
+}
+
   
   const hasInvalidInput = (formInputs) => {
     return formInputs.some(item => !item.validity.valid)

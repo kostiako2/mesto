@@ -10,6 +10,8 @@ const itemTemplate = document.querySelector('.item_template').content.querySelec
 console.log(itemTemplate);
 const groupCard = document.querySelector(".group");
 
+
+
 const popupOpenButtonElementPicture = itemTemplate.querySelector(".group__button");
 
 const popupPhoto = popupElementPicture.querySelector('.popup__photo-picture');
@@ -28,12 +30,15 @@ const nameOutput = document.querySelector('.profile__title');
 const jobOutput = document.querySelector('.profile__subtitle');
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened')
-  closeOverlay(popup);
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc)
+  document.addEventListener('click',closeOverlay);
 }
 
 function closePopup(popup) {
-  popup.classList.remove('popup_opened')
+  document.removeEventListener('keydown',closeByEsc);
+  document.removeEventListener('click',closeOverlay);
+  popup.classList.remove('popup_opened');
 }
 
 popupOpenButtonElementProfile.addEventListener('click', function(){
@@ -45,6 +50,8 @@ popupCloseButtonElementProfile.addEventListener('click', function(){
   closePopup(popupElementProfile)
 });
 popupOpenButtonElementCard.addEventListener('click', function(){
+  nameCardInput.value = ''; 
+  linkInput.value = '';
   openPopup(popupElementCard)
 });
 popupCloseButtonElementCard.addEventListener('click', function(){
@@ -110,16 +117,16 @@ function addCardSubmit (evt) {
 formElementProfile.addEventListener('submit', handleFormSubmitProfile);
 formElementCard.addEventListener('submit', addCardSubmit);
 
-function closeOverlay (popup) {
+function closeOverlay (evt) { 
   const overlay = document.querySelector('.popup_opened');
-  overlay.addEventListener('click', (evt) => {
   if (evt.target === overlay) {
-    closePopup(popup);
+   closePopup(overlay); 
+  } 
+}
+
+function closeByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup); 
   }
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      closePopup(popup);
-    }
-  });
-  })
-};
+}  

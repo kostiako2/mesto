@@ -5,7 +5,7 @@
     color: #000000;
     margin: auto;
     min-width: 282px;
-    min-height: 322px;
+    min-height: 352px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,6 @@
 @media (min-width:1280px) {
     .popup__container {
         min-width: 430px;
-        
+        height: 360px;
     }
 }
