@@ -29,6 +29,7 @@ const jobOutput = document.querySelector('.profile__subtitle');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened')
+  closeOverlay(popup);
 }
 
 function closePopup(popup) {
@@ -61,15 +62,16 @@ function handleFormSubmitProfile (evt) {
 }
 
 function addCard (name,link) {
-  let htmlElement = itemTemplate.cloneNode(true);
-  let like = htmlElement.querySelector(".group__like");
-  let deleteTrash = htmlElement.querySelector(".group__trash");
-  let popupOpenButtonElementPicture = htmlElement.querySelector(".group__button");
+  const htmlElement = itemTemplate.cloneNode(true);
+  const like = htmlElement.querySelector(".group__like");
+  const deleteTrash = htmlElement.querySelector(".group__trash");
+  const popupOpenButtonElementPicture = htmlElement.querySelector(".group__button");
 
   htmlElement.querySelector(".group__title").textContent = name;
-  let photo = htmlElement.querySelector(".group__photo");
+  const photo = htmlElement.querySelector(".group__photo");
   photo.src = link;
   photo.alt = name;
+  
 
   function toggleLike () {
     like.classList.toggle('group__like_active');
@@ -85,6 +87,7 @@ function addCard (name,link) {
     openPopup(popupElementPicture)
     popupTitlePicture.textContent = name;
     popupPhoto.src = link;
+    photo.alt = name;
   });
   
   return htmlElement;
@@ -106,3 +109,17 @@ function addCardSubmit (evt) {
 
 formElementProfile.addEventListener('submit', handleFormSubmitProfile);
 formElementCard.addEventListener('submit', addCardSubmit);
+
+function closeOverlay (popup) {
+  const overlay = document.querySelector('.popup_opened');
+  overlay.addEventListener('click', (evt) => {
+  if (evt.target === overlay) {
+    closePopup(popup);
+  }
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  });
+  })
+};
