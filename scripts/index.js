@@ -10,7 +10,7 @@ const itemTemplate = document.querySelector('.item_template').content.querySelec
 console.log(itemTemplate);
 const groupCard = document.querySelector(".group");
 
-
+const popupSaveButton = popupElementCard.querySelector('.popup__button');
 
 const popupOpenButtonElementPicture = itemTemplate.querySelector(".group__button");
 
@@ -29,10 +29,20 @@ const formElementCard = popupElementCard.querySelector('.popup__form');
 const nameOutput = document.querySelector('.profile__title');
 const jobOutput = document.querySelector('.profile__subtitle');
 
+
+
+
+
+popupElementPicture.addEventListener('click',closeOverlay);
+
+popupElementCard.addEventListener('click',closeOverlay);
+
+popupElementProfile.addEventListener('click',closeOverlay)
+
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEsc)
-  document.addEventListener('click',closeOverlay);
 }
 
 function closePopup(popup) {
@@ -52,7 +62,10 @@ popupCloseButtonElementProfile.addEventListener('click', function(){
 popupOpenButtonElementCard.addEventListener('click', function(){
   nameCardInput.value = ''; 
   linkInput.value = '';
+  popupSaveButton.classList.add('popup__button_disabled');
+  popupSaveButton.setAttribute('disabled',true);
   openPopup(popupElementCard)
+  
 });
 popupCloseButtonElementCard.addEventListener('click', function(){
   closePopup(popupElementCard)
@@ -119,6 +132,7 @@ formElementCard.addEventListener('submit', addCardSubmit);
 
 function closeOverlay (evt) { 
   const overlay = document.querySelector('.popup_opened');
+  console.log(overlay);
   if (evt.target === overlay) {
    closePopup(overlay); 
   } 

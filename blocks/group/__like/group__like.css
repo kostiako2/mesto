@@ -2,7 +2,7 @@
     width: 22px;
     height: 19px;
     align-self: flex-end;
-    cursor: url('../../../images/Layer.png'), pointer;
+    cursor: pointer;
     padding: 0;
     background-image: url('../../../images/like.svg');
     border: 0;

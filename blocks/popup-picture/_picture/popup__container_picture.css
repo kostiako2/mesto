@@ -2,5 +2,13 @@
     background: rgba(0, 0, 0, 0);
     max-width: 75vw;
     max-height: 75vh;
+    margin-top: auto;
+    
 }
 
+@media (min-width:1280px) {
+    .popup__container_picture {
+        min-width: 430px;
+        min-height: 360px;
+    }
+}

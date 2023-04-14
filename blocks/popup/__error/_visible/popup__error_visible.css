@@ -3,8 +3,15 @@
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    min-height: 30px;
-
+    line-height: px;
+    box-sizing: border-box;
+    position: absolute;
+    
 }
 
+
+.popup__error_visible:last-of-type {
+   top: 87px;
+   left:0;
+}
 
