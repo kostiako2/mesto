@@ -44,12 +44,11 @@ popupElementProfile.addEventListener('click',closeOverlay)
 
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closeByEsc)
+  document.addEventListener('keydown', closeByEsc);
 }
 
 export function closePopup(popup) {
   document.removeEventListener('keydown',closeByEsc);
-  document.removeEventListener('click',closeOverlay);
   popup.classList.remove('popup_opened');
 }
 
@@ -64,8 +63,7 @@ popupCloseButtonElementProfile.addEventListener('click', function(){
 popupOpenButtonElementCard.addEventListener('click', function(){
   nameCardInput.value = ''; 
   linkInput.value = '';
-  popupSaveButton.classList.add('popup__button_disabled');
-  popupSaveButton.setAttribute('disabled',true);
+  validators[formElementCard.getAttribute('name')].disableButton(popupSaveButton);
   openPopup(popupElementCard)
   
 });
@@ -119,9 +117,11 @@ export function closeByEsc(evt) {
   }
 }  
 
+const validators = {};
 
 const validationForms = Array.from(document.querySelectorAll('.popup__form'));
 validationForms.forEach((form)=> {
-  const formItem = new FormValidator(validationConfig,form);
-  formItem.enableValidation();
+  const formValidator = new FormValidator(validationConfig, form);
+  validators[form.getAttribute('name')] = formValidator;
+  formValidator.enableValidation();
 })

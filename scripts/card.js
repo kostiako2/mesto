@@ -1,4 +1,5 @@
 import {openPopup,popupElementPicture,popupTitlePicture,popupPhoto} from "./index.js";
+
 export class Card {
     constructor(name,link,templateSelector){
         this._name = name;
@@ -21,24 +22,28 @@ export class Card {
     }
   
     _likeCard = () => {
-        this._cardElement.querySelector('.group__like').classList.toggle('group__like_active');
+        this.cardElementLike.classList.toggle('group__like_active');
     }
   
    
   
     _createCard () {
         this._cardElement = this._getCard();
-        this._cardElement.querySelector('.group__title').textContent = this._name;
-        this._cardElement.querySelector('.group__photo').alt = this._name;
-        this._cardElement.querySelector('.group__photo').src = this._link;
-  
+        this.cardElementTitle =  this._cardElement.querySelector('.group__title');
+        this.cardElementPhoto = this._cardElement.querySelector('.group__photo');
+        this.cardElementLike = this._cardElement.querySelector('.group__like');
+        this.cardElementTrash = this._cardElement.querySelector('.group__trash');
+        this.cardElementButton = this._cardElement.querySelector('.group__button');
+        this.cardElementPhoto.alt = this._name;
+        this.cardElementPhoto.src = this._link;
+        this.cardElementTitle.textContent = this._name;
         this._setEventListeners();
     }
   
     _setEventListeners() {
-      this._cardElement.querySelector('.group__trash').addEventListener('click', this._deleteCard) ;
-      this._cardElement.querySelector('.group__like').addEventListener('click', this._likeCard);
-      this._cardElement.querySelector('.group__button').addEventListener('click', () => {
+      this.cardElementTrash.addEventListener('click', this._deleteCard) ;
+      this.cardElementLike.addEventListener('click', this._likeCard);
+      this.cardElementButton.addEventListener('click', () => {
             openPopup(popupElementPicture);
             popupTitlePicture.textContent = this._name;
             popupPhoto.src = this._link;

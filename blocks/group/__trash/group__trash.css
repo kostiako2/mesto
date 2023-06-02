@@ -4,7 +4,7 @@
     top:20px;
     width: 18px;
     height: 19px;
-    cursor: url('../../../../images/Layer.png'), auto;
+    cursor: url('../../../../images/Layer.png'), pointer;
     background-image: url('../../../images/Trash.svg');
     border: 0;
     padding: 0;
