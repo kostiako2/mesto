@@ -22,28 +22,28 @@ export class Card {
     }
   
     _likeCard = () => {
-        this.cardElementLike.classList.toggle('group__like_active');
+        this._cardElementLike.classList.toggle('group__like_active');
     }
   
    
   
     _createCard () {
         this._cardElement = this._getCard();
-        this.cardElementTitle =  this._cardElement.querySelector('.group__title');
-        this.cardElementPhoto = this._cardElement.querySelector('.group__photo');
-        this.cardElementLike = this._cardElement.querySelector('.group__like');
-        this.cardElementTrash = this._cardElement.querySelector('.group__trash');
-        this.cardElementButton = this._cardElement.querySelector('.group__button');
-        this.cardElementPhoto.alt = this._name;
-        this.cardElementPhoto.src = this._link;
-        this.cardElementTitle.textContent = this._name;
+        this._cardElementTitle =  this._cardElement.querySelector('.group__title');
+        this._cardElementPhoto = this._cardElement.querySelector('.group__photo');
+        this._cardElementLike = this._cardElement.querySelector('.group__like');
+        this._cardElementTrash = this._cardElement.querySelector('.group__trash');
+        this._cardElementButton = this._cardElement.querySelector('.group__button');
+        this._cardElementPhoto.alt = this._name;
+        this._cardElementPhoto.src = this._link;
+        this._cardElementTitle.textContent = this._name;
         this._setEventListeners();
     }
   
     _setEventListeners() {
-      this.cardElementTrash.addEventListener('click', this._deleteCard) ;
-      this.cardElementLike.addEventListener('click', this._likeCard);
-      this.cardElementButton.addEventListener('click', () => {
+      this._cardElementTrash.addEventListener('click', this._deleteCard) ;
+      this._cardElementLike.addEventListener('click', this._likeCard);
+      this._cardElementButton.addEventListener('click', () => {
             openPopup(popupElementPicture);
             popupTitlePicture.textContent = this._name;
             popupPhoto.src = this._link;

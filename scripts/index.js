@@ -63,7 +63,7 @@ popupCloseButtonElementProfile.addEventListener('click', function(){
 popupOpenButtonElementCard.addEventListener('click', function(){
   nameCardInput.value = ''; 
   linkInput.value = '';
-  validators[formElementCard.getAttribute('name')].disableButton(popupSaveButton);
+  validators[formElementCard.getAttribute('name')].disableButton();
   openPopup(popupElementCard)
   
 });
