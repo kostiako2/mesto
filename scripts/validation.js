@@ -15,13 +15,13 @@ export class FormValidator {
   }
 
 _hasInvalidInput = () => {
-    return this._validationSettings.some(item => !item.validity.valid)
+    return this._inputElements.some(item => !item.validity.valid)
 
   }
 
 
 _enableButton = () => {
-    this._formButton.remove(this._validationSettings.inactiveButtonClass);
+    this._formButton.classList.remove(this._validationSettings.inactiveButtonClass);
     this._formButton.removeAttribute("disabled", true);
   }
 
@@ -49,14 +49,15 @@ _hideError = (input) => {
 _setEventListeners(){
     this._inputElements = Array.from(this._formElement.querySelectorAll(this._validationSettings.inputSelector));
     this._formButton = this._formElement.querySelector(this._validationSettings.submitButtonSelector); 
-    this.disableButton(this._formButton);    
-    this.inputElements.forEach(input => {
+    console.log(this._formButton);
+    this.disableButton();    
+    this._inputElements.forEach(input => {
         input.addEventListener('input', () => {
           this._checkInputValidaty(input);
-        if (this._hasInvalidInput(this._inputElements)){
-          this.disableButton(this._formButton); 
+        if (this._hasInvalidInput()){
+          this.disableButton(); 
         }else {
-          this._enableButton(this._formButton);
+          this._enableButton();
         }
         })
     })

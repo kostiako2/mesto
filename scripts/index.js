@@ -74,7 +74,10 @@ popupCloseButtonElementPicture.addEventListener('click',function(){
   closePopup(popupElementPicture)
 });
 
-
+const createCard = (name, link) => {
+  const cardItem = new Card(name, link,'item_template');
+  return cardItem.generateCard();
+}
 
 function handleFormSubmitProfile (evt) {
   evt.preventDefault(); 
@@ -88,14 +91,12 @@ function renderCard(element) {
 }
  
 initialCards.reverse().forEach(element => {
-  const cardItem = new Card(element.name, element.link,'item_template');
-  renderCard(cardItem.generateCard());
+  renderCard(createCard(element.name, element.link));
 });
 
 function addCardSubmit (evt) {
-  evt.preventDefault();
-  const cardItem = new Card(nameCardInput.value, linkInput.value,'item_template');
-  renderCard(cardItem.generateCard());
+  evt.preventDefault(); 
+  renderCard(createCard(nameCardInput.value,linkInput.value));
   closePopup(popupElementCard);
 }
 
@@ -123,5 +124,6 @@ const validationForms = Array.from(document.querySelectorAll('.popup__form'));
 validationForms.forEach((form)=> {
   const formValidator = new FormValidator(validationConfig, form);
   validators[form.getAttribute('name')] = formValidator;
+  console.log(validators);
   formValidator.enableValidation();
 })
